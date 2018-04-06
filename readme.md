@@ -26,6 +26,20 @@ tbd
     - commTypes = call, email, meet, ... other
     - details [~large textbox field]
 
+- views [dynamically allow any column set]
+    - ??
+
+        - sample dynamic set
+            - logo
+            - name
+            - address
+            - rating A
+            - rating B...
+            - map
+            - distance calculation**4
+
+
 **1- investigate possibility of storing blob? data directly in-table instead of interoperating with a static directory resource (i find that distasteful that ... "rigid dependency coupling").
 **2- to be viewed in a long conversation stream, back and forth, perhaps like messenger etc, with slight styling tilt on each "side".
 **3- ~possibly~ dynamically updating
+**4- default first result by google?
