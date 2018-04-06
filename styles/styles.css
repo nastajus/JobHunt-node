@@ -1,0 +1,21 @@
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: table-cell;
+}
+tr.even:hover, tr.odd:hover {
+    background-color: #FCB07E;  /* very light tangelo */
+    cursor: pointer;
+}
+tr.even  {
+    background-color: #E9E3E6; /* platinum */
+    color: black;
+}
+tr.odd  {
+    background-color: #D7C0D0; /* thistle */
+    color: black;
+}
+tr>td>a {
+    text-decoration: none;
+    color: black;
+}
