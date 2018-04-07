@@ -6,13 +6,15 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
 
-
 	const mock = require ('../../data/mock');
-	let foo = "";
-	base64Img.img( mock.companies[1].logo, './public/mock', mock.companies[1].name, function(err, filepath) { foo = filepath;})
-	console.log(foo);
-	const logoPath = '/mock/' + mock.companies[1].name + '.png'; //todo remove very hacky tack-on extension
-	res.render('companiesPage.ejs', { companies: mock.companies, convertedImage: logoPath });
+
+	mock.companies.forEach( (entry, index) => {
+		let name = index + "_" + entry.name;
+		base64Img.img(entry.logo, './public/mock', name, function (err, filepath) {});
+		entry.convertedLogoPath = '/mock/' + name + mock.getExtensionBase64(entry.logo);
+	});
+
+	res.render('companiesPage.ejs', { companies: mock.companies });
 
 
 	/*

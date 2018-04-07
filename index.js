@@ -1,6 +1,6 @@
 let express = require('express');
 let path = require('path');
-const port = process.env.PORT || 3006;
+const port = process.env.PORT || 3007;
 
 
 // web app setup
