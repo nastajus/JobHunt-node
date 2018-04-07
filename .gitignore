@@ -82,3 +82,7 @@ node_modules
 # Application-specific working directories
 uploads
 logs
+public/mock
+
+
+package-lock.json

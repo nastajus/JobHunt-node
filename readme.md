@@ -1,7 +1,14 @@
+#### business rules ("user stories")
+v0.0.1
+- a person can "add a company" to an "aspect page" by typing at minimum a name (mandatory), optionally setting uploading a logo**A (optional), and typing a singular standard-formatted address. **[emphasizes: form, http, db]**
+- a person can "customize the order of companies listed on the aspect page" (to indicate preference) **[empahsizes ui, minor db]**
+- a person can "remove a company from an aspect page" but still "keep a record" of that company in the "companies page" to easily add later.
+- a person can "permanently remove a company from the companies page" (removing from the database)
 
-#### business rules
+**A- long-term, need a protection mechanism against abuse such as uploading of inappropriate images.
 
-tbd
+future version:
+**- general concern for SQL injection attacks with free-form entry TBD. ir
 
 ---
 
@@ -23,7 +30,7 @@ v0.0.1:
 
 - aspects**6
     - aspectId
-    - distance (integer) [changed by manually dragging often by 3-vertical bar handle in UI]
+    - position (integer) [changed by manually dragging often by 3-vertical bar handle in UI]
     - compId (fk)
     - groupId (fk)
     - >view compId
@@ -68,7 +75,6 @@ v0.0.2:
 **5- mvp rules out of scope for now: later, consider how to store m# of addresses? ...
 **6- query returns all _selected_ company fields via fk. possibly have aspect & aspect_view, or something.
 
-
 ---
 
 #### cheat sheet sequelize commands
@@ -80,4 +86,32 @@ v0.0.2:
     * well. okay. it works.
     * it just generates an empty boilerplate that you fill in manually anyways
     * i think i imagined the CLI was able to do too much. okay cool.
+
+---
+
+#### api
+
+    /GET  companies
+view exhaustive list of all companies tracked (ordered)
+
+    /GET  aspects
+view raw list of user-managed "aspects" (with their subset tables) (ordered within each table)
+
+    /POST companies
+set 1 new company name (mandatory), with logo picture [optional], address text [optional]
+
+
+preferred:
+
+    /POST aspects?company=XYZ&?position=123&table=ABC
+keep root simple, dump all other parameters into _&_& fields.
+
+
+not preferred:
+
+    /POST aspects/tables/companies?position=123
+    /POST aspects?company=XYZ&?position=123
+    /POST aspects/tables/
+(last one: possibly used to create an named aspect (table) alone)
+
 

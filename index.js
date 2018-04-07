@@ -1,12 +1,13 @@
 let express = require('express');
 let path = require('path');
-const port       = process.env.PORT || 3006;
+const port = process.env.PORT || 3006;
 
 
 // web app setup
 const apiRoutes = require('./routes/api');
 const app = express();
 app.use(express.static(path.resolve('./styles')));
+app.use(express.static(path.resolve('./public')));
 
 
 
@@ -19,7 +20,7 @@ app.use('/api', apiRoutes);
 
 
 app.get('/', function (req, res) {
-	res.render('index.ejs', {} );
+	res.render('index.ejs', { companies: require('./data/mock')} );
 });
 
 

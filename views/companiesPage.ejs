@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Hunt | Companies</title>
+    <link rel="stylesheet" href="/styles.css" type="text/css">
+</head>
+
+<body>
+
+<h3>Companies</h3>
+<div>an exhaustive listing of all companies user has entered</div>
+<table>
+    <tr>
+        <th>logo</th>
+        <th>name</th>
+        <th>address</th>
+    </tr>
+    <% if (typeof companies == 'object' && companies) { %>
+    <% companies.forEach((company, index) => { %>
+    <tr class="<%= (index % 2 == 0) ? 'odd' : 'even' %>">
+        <!--<td><%#= company.logo %>"></td>-->
+        <td><img src="<%= convertedImage %>" width="150"/></td>
+        <td><%= company.name %></td>
+        <td><%= company.address %></td>
+    </tr>
+    <% }); %>
+    <% } %>
+</table>
+
+</body>
+</html>
