@@ -1,3 +1,21 @@
+#### Paper Sketches Animation
+
+![paper sketches animation](https://github.com/nastajus/JobHunt-node/raw/master/readme/jh-4sec.gif "paper sketches animation of 3 sheets")
+
+- Sketch #1: Rankings & Route Picker Map
+    - Rankings: integration with some of ranking service APIs, extensibility optional column.
+    - Google Maps integration: allowing preview and embedded selection of mode of transport.
+
+- Sketch #2: Distances & Desired Ordering 
+    - single page view listing exhaustively all company travel times based on selected mode of transport unique to each company.
+    - emphasis on company for easy identifier, and on draggable interface.
+
+- Sketch #3: Categorical ordering 
+    - ability to create and name categories as desired.
+    - can drag line items dragging between different tables. key feature.
+
+
+
 #### business rules ("user stories")
 v0.0.1
 - a person can "add a company" to an "aspect page" by typing at minimum a name (mandatory), optionally setting uploading a logo**A (optional), and typing a singular standard-formatted address. **[emphasizes: form, http, db]**
